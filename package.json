@@ -1,0 +1,24 @@
+{
+  "name": "pandemic",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "analyze": "nuxt analyze",
+    "build": "nuxt build",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "nuxt": "4.4.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.10",
+    "@types/node": "^24.12.2",
+    "polygon-clipping": "^0.15.7",
+    "rollup-plugin-visualizer": "^7.0.1",
+    "tailwindcss": "^4.1.10",
+    "typescript": "~5.8.3"
+  }
+}
