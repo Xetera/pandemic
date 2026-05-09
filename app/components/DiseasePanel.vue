@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { ref, computed, onMounted, onUnmounted } from "vue";
 
 interface Trait {
   name: string;
@@ -108,6 +108,17 @@ function handlePointerDown(e: PointerEvent) {
     isTouch.value = true;
   }
 }
+
+function handleDocumentClick(e: MouseEvent) {
+  if (!isTouch.value || !tooltip.value) return;
+  const target = e.target as Element;
+  if (!target.closest(".trait-btn")) {
+    tooltip.value = null;
+  }
+}
+
+onMounted(() => document.addEventListener("click", handleDocumentClick, true));
+onUnmounted(() => document.removeEventListener("click", handleDocumentClick, true));
 </script>
 
 <template>
@@ -218,33 +229,18 @@ function handlePointerDown(e: PointerEvent) {
     </div>
 
     <PanelSection label="DISEASE INFORMATION">
-      <div class="flex flex-wrap justify-between gap-2 mb-3">
-        <div class="flex items-baseline gap-2">
-          <span
-            class="text-[11px] font-bold tracking-widest text-[#bbb] uppercase"
-            >EVOLUTION POINTS</span
-          >
-          <span class="text-lg text-[#888] font-bold">{{
-            disease.evolutionPoints
-          }}</span>
-        </div>
-        <div class="flex items-baseline gap-2">
-          <span
-            class="text-[11px] font-bold tracking-widest text-[#bbb] uppercase"
-            >AVERAGE INFECTIONS A DAY</span
-          >
-          <span class="text-lg text-[#888] font-bold">{{
-            disease.avgInfectionsPerDay
-          }}</span>
-        </div>
-        <div class="flex items-baseline gap-2">
-          <span
-            class="text-[11px] font-bold tracking-widest text-[#bbb] uppercase"
-            >AVERAGE DEATHS A DAY</span
-          >
-          <span class="text-lg text-[#888] font-bold">{{
-            disease.avgDeathsPerDay
-          }}</span>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-x-2 gap-y-3 mb-3">
+        <div
+          v-for="[label, val] in [
+            ['EVOLUTION POINTS', disease.evolutionPoints],
+            ['AVERAGE INFECTIONS A DAY', disease.avgInfectionsPerDay],
+            ['AVERAGE DEATHS A DAY', disease.avgDeathsPerDay],
+          ]"
+          :key="label"
+          class="flex items-baseline gap-2 flex-wrap"
+        >
+          <span class="font-bold tracking-wide text-[#ddd] uppercase">{{ label }}</span>
+          <span class="text-[#888] font-bold">{{ val }}</span>
         </div>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
