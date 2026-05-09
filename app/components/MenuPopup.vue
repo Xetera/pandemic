@@ -68,7 +68,7 @@ const contactEmail = computed(() => {
 
 <style scoped>
 .menu-backdrop {
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: 59;
   pointer-events: auto;
