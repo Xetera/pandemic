@@ -46,6 +46,8 @@ export default defineNuxtConfig({
           property: "og:image",
           content: "https://hantavirus.xetera.dev/pandemic_screenshot.jpg",
         },
+        { name: "twitter:title", content: "Hantavirus Tracker" },
+        { name: "twitter:description", content: description },
         {
           name: "twitter:image",
           content: "https://hantavirus.xetera.dev/pandemic_screenshot.jpg",
