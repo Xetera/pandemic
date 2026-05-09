@@ -1,6 +1,9 @@
 import tailwindcss from "@tailwindcss/vite";
 import { visualizer } from "rollup-plugin-visualizer";
 
+const description =
+  "Track hantavirus like it's 2009 and you just got back home from school.";
+
 export default defineNuxtConfig({
   ssr: true,
   css: ["~/assets/style.css"],
@@ -28,6 +31,17 @@ export default defineNuxtConfig({
           name: "viewport",
           content: "width=device-width, initial-scale=1, viewport-fit=cover",
         },
+        {
+          name: "description",
+          content: description,
+        },
+        {
+          property: "og:description",
+          content: description,
+        },
+        { property: "og:image", content: "/pandemic_screenshot.jpg" },
+        { name: "twitter:image", content: "/pandemic_screenshot.jpg" },
+        { name: "twitter:card", content: "summary_large_image" },
       ],
       script: [
         {
