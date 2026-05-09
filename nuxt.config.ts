@@ -1,8 +1,7 @@
 import tailwindcss from "@tailwindcss/vite";
 import { visualizer } from "rollup-plugin-visualizer";
 
-const description =
-  "Track hantavirus like it's 2009 and you just got back home from school.";
+const description = "It's 2009 and you just got back home from school.";
 
 export default defineNuxtConfig({
   ssr: true,
@@ -42,8 +41,15 @@ export default defineNuxtConfig({
         },
         { property: "og:url", content: "https://hantavirus.xetera.dev" },
         { name: "theme-color", content: "#e12d2d" },
-        { property: "og:image", content: "https://hantavirus.xetera.dev/pandemic_screenshot.jpg" },
-        { name: "twitter:image", content: "https://hantavirus.xetera.dev/pandemic_screenshot.jpg" },
+        { property: "og:type", content: "website" },
+        {
+          property: "og:image",
+          content: "https://hantavirus.xetera.dev/pandemic_screenshot.jpg",
+        },
+        {
+          name: "twitter:image",
+          content: "https://hantavirus.xetera.dev/pandemic_screenshot.jpg",
+        },
         { name: "twitter:card", content: "summary_large_image" },
       ],
       script: [
@@ -51,6 +57,7 @@ export default defineNuxtConfig({
           defer: true,
           src: "https://overtime-contingency.xetera.dev/selfhosted-umami",
           "data-website-id": "9361a4b1-99f6-4046-81c8-aac18ae7df4b",
+          "data-performance": "true",
           "data-disclaimer":
             "I selfhost privacy-respecting analytics using umami on my own server. Unlike Google analytics the data isn't shared with anyone else. Feel free to block this subdomain if you're not comfortable with that",
         },
