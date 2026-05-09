@@ -35,12 +35,15 @@ export default defineNuxtConfig({
           name: "description",
           content: description,
         },
+        { property: "og:title", content: "Hantavirus Tracker" },
         {
           property: "og:description",
           content: description,
         },
-        { property: "og:image", content: "/pandemic_screenshot.jpg" },
-        { name: "twitter:image", content: "/pandemic_screenshot.jpg" },
+        { property: "og:url", content: "https://hantavirus.xetera.dev" },
+        { name: "theme-color", content: "#e12d2d" },
+        { property: "og:image", content: "https://hantavirus.xetera.dev/pandemic_screenshot.jpg" },
+        { name: "twitter:image", content: "https://hantavirus.xetera.dev/pandemic_screenshot.jpg" },
         { name: "twitter:card", content: "summary_large_image" },
       ],
       script: [

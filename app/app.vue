@@ -330,12 +330,19 @@ const world = computed(() => {
   };
 });
 
-const disease = {
+const disease = computed(() => {
+  const daysSinceStart = Math.max(
+    1,
+    Math.floor((Date.now() - DISEASE_START.getTime()) / 86_400_000),
+  );
+  const totalInfected = world.value.infectedPopulation;
+  const totalDead = world.value.deadPopulation;
+  return {
   name: "ANDES HANTAVIRUS",
   type: "VIRUS EVOLUTION",
-  evolutionPoints: 50,
-  avgInfectionsPerDay: 35,
-  avgDeathsPerDay: 12,
+  evolutionPoints: 0,
+  avgInfectionsPerDay: totalInfected / daysSinceStart,
+  avgDeathsPerDay: totalDead / daysSinceStart,
   lethality: 0.45,
   infectivity: 0.32,
   visibility: 0.55,
@@ -545,7 +552,8 @@ const disease = {
         "Unlike North American hantaviruses, Andes can produce significant hemorrhagic features. Vascular leakage and coagulopathy cause both internal and mucosal bleeding.",
     },
   ],
-};
+  };
+});
 
 const facilityPaths: Record<string, { black: string; white: string }> = {
   "59.svg": {

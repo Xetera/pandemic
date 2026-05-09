@@ -233,8 +233,8 @@ onUnmounted(() => document.removeEventListener("click", handleDocumentClick, tru
         <div
           v-for="[label, val] in [
             ['EVOLUTION POINTS', disease.evolutionPoints],
-            ['AVERAGE INFECTIONS A DAY', disease.avgInfectionsPerDay],
-            ['AVERAGE DEATHS A DAY', disease.avgDeathsPerDay],
+            ['AVERAGE INFECTIONS A DAY', disease.avgInfectionsPerDay.toFixed(1)],
+            ['AVERAGE DEATHS A DAY', disease.avgDeathsPerDay.toFixed(1)],
           ]"
           :key="label"
           class="flex items-baseline gap-2 flex-wrap"
