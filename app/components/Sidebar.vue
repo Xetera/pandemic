@@ -32,7 +32,7 @@ const viewportStrokeOpacity = computed(() => {
 });
 
 const viewportStrokeColor = computed(() =>
-  minimapDragging.value ? "#db1515" : "#ba1212"
+  minimapDragging.value ? "#db1515" : "#ba1212",
 );
 
 const visibleH = computed(() => props.mapHeight - props.mapTop);
@@ -136,8 +136,20 @@ function onMinimapPointerDown(e: PointerEvent) {
         <rect
           :x="Math.max(0, viewport.x)"
           :y="Math.max(mapTop, viewport.y)"
-          :width="Math.max(0, Math.min(mapWidth, viewport.x + viewport.w) - Math.max(0, viewport.x))"
-          :height="Math.max(0, Math.min(mapTop + visibleH, viewport.y + viewport.h) - Math.max(mapTop, viewport.y))"
+          :width="
+            Math.max(
+              0,
+              Math.min(mapWidth, viewport.x + viewport.w) -
+                Math.max(0, viewport.x),
+            )
+          "
+          :height="
+            Math.max(
+              0,
+              Math.min(mapTop + visibleH, viewport.y + viewport.h) -
+                Math.max(mapTop, viewport.y),
+            )
+          "
           fill="#ff0000"
           :fill-opacity="viewportFillOpacity"
           :stroke="viewportStrokeColor"
@@ -158,6 +170,7 @@ function onMinimapPointerDown(e: PointerEvent) {
             rel="noopener noreferrer"
             class="news-link"
             data-umami-event="news-click"
+            :data-umami-event-position="i"
             :data-umami-event-source="item.source"
           >
             <span class="news-source">{{ item.source }}</span>
@@ -167,7 +180,11 @@ function onMinimapPointerDown(e: PointerEvent) {
         </li>
         <li class="italic font-medium attribution -mt-3!">
           Data: hantavirus.one (CC BY 4.0).
-          <a target="_blank" href="https://hantavirus.one/"
+          <a
+            data-umami-event="attribution-click"
+            data-umami-event-source="news-list"
+            target="_blank"
+            href="https://hantavirus.one/"
             >https://hantavirus.one/</a
           >
         </li>
@@ -212,7 +229,6 @@ function onMinimapPointerDown(e: PointerEvent) {
   cursor: crosshair;
   touch-action: none;
 }
-
 
 .news {
   flex: 1;

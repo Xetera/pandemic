@@ -44,8 +44,7 @@ const formattedDate = () => {
         class="bar-btn"
         :class="{ active: active === 'menu' }"
         @click="click('menu')"
-        data-umami-event="bottombar-click"
-        data-umami-event-button="menu"
+        data-umami-event="menu-click"
       >
         MENU
       </button>
@@ -53,8 +52,7 @@ const formattedDate = () => {
         class="bar-btn"
         :class="{ active: active === 'world' }"
         @click="click('world')"
-        data-umami-event="bottombar-click"
-        data-umami-event-button="world"
+        data-umami-event="world-click"
       >
         WORLD
       </button>
@@ -62,8 +60,7 @@ const formattedDate = () => {
         class="bar-btn"
         :class="{ active: active === 'disease' }"
         @click="click('disease')"
-        data-umami-event="bottombar-click"
-        data-umami-event-button="disease"
+        data-umami-event="disease-click"
       >
         DISEASE
       </button>

@@ -228,6 +228,7 @@ function openRegion(key: string) {
   if (dragging.value) return;
   const region = regions.value[key];
   if (!region) return;
+  window.umami?.track("region-click", { region: region.full_name });
   const afflictionLabels = [
     "RIOTS",
     "FLOODS",

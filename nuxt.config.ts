@@ -49,7 +49,7 @@ export default defineNuxtConfig({
           src: "https://overtime-contingency.xetera.dev/selfhosted-umami",
           "data-website-id": "9361a4b1-99f6-4046-81c8-aac18ae7df4b",
           "data-disclaimer":
-            "I selfhost analytics using umami on my own server. Unlike Google analytics the data isn't shared with anyone else. Feel free to block this subdomain if you're not comfortable with that",
+            "I selfhost privacy-respecting analytics using umami on my own server. Unlike Google analytics the data isn't shared with anyone else. Feel free to block this subdomain if you're not comfortable with that",
         },
       ],
       link: [

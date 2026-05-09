@@ -53,7 +53,13 @@ const contactEmail = computed(() => {
       >
         PANDEMIC 2
       </a>
-      <a target="_blank" href="https://hantavirus.one/" class="menu-item">
+      <a
+        data-umami-event="attribution-click"
+        data-umami-event-source="menu"
+        target="_blank"
+        href="https://hantavirus.one/"
+        class="menu-item"
+      >
         DATA SOURCE
       </a>
     </div>
