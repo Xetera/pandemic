@@ -5,5 +5,5 @@ export default defineCachedEventHandler(
       headers: config.identityHeaders,
     });
   },
-  { maxAge: 60 * 10, staleMaxAge: -1 },
+  { maxAge: 60 * 10 },
 );
