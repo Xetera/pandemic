@@ -109,5 +109,4 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: "2025-05-09",
-  modules: ["@nuxt/image"],
 });

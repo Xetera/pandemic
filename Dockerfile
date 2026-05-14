@@ -8,7 +8,6 @@ RUN bun run build
 FROM oven/bun:1-slim
 WORKDIR /app
 COPY --from=builder /app/.output ./output
-RUN cd output/server && bun install --frozen-lockfile
 ENV PORT=3000
 EXPOSE 3000
 CMD ["bun", "run", "output/server/index.mjs"]

@@ -848,20 +848,14 @@ function onPanTo({ x, y }: { x: number; y: number }) {
         <p class="text-base sm:text-sm leading-relaxed text-white/50">
           A real-time outbreak tracker styled after the classic flash game
           <span class="inline-flex items-center align-middle">
-            <NuxtImg
-              src="/pandemic.png"
-              alt="Pandemic"
-              height="44"
-              format="webp"
-              class="-mr-[3px] h-[22px] w-auto"
-            />
-            <NuxtImg
-              src="/two.png"
-              alt="2"
-              height="44"
-              format="webp"
-              class="h-[22px] w-auto"
-            />
+            <picture class="-mr-[3px] h-[22px]">
+              <source srcset="/pandemic.webp" type="image/webp" />
+              <img src="/pandemic.png" alt="Pandemic" class="h-[22px] w-auto" />
+            </picture>
+            <picture class="h-[22px]">
+              <source srcset="/two.webp" type="image/webp" />
+              <img src="/two.png" alt="2" class="h-[22px] w-auto" />
+            </picture>
           </span>
           that inspired many other popular games like Plague Inc.
         </p>
