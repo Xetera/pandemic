@@ -10,12 +10,14 @@ const ogImage = `${siteUrl}/pandemic_screenshot.jpg`;
 export default defineNuxtConfig({
   ssr: true,
   css: ["~/assets/style.css"],
+
   runtimeConfig: {
     identityHeaders: {
       "User-Agent": "hantavirus.xetera.dev/1.0",
       From: "contact+hantavirus@xetera.dev",
     },
   },
+
   vite: {
     plugins: [
       tailwindcss(),
@@ -26,6 +28,7 @@ export default defineNuxtConfig({
       }),
     ],
   },
+
   app: {
     head: {
       title: "Hantavirus Tracker",
@@ -86,6 +89,7 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   routeRules: {
     "/fonts/**": {
       headers: { "cache-control": "public, max-age=31536000, immutable" },
@@ -103,5 +107,7 @@ export default defineNuxtConfig({
       headers: { "cache-control": "public, max-age=31536000, immutable" },
     },
   },
+
   compatibilityDate: "2025-05-09",
+  modules: ["@nuxt/image"],
 });

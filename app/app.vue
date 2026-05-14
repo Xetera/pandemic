@@ -338,220 +338,220 @@ const disease = computed(() => {
   const totalInfected = world.value.infectedPopulation;
   const totalDead = world.value.deadPopulation;
   return {
-  name: "ANDES HANTAVIRUS",
-  type: "VIRUS EVOLUTION",
-  evolutionPoints: 0,
-  avgInfectionsPerDay: totalInfected / daysSinceStart,
-  avgDeathsPerDay: totalDead / daysSinceStart,
-  lethality: 0.45,
-  infectivity: 0.32,
-  visibility: 0.55,
-  symptoms: [
-    {
-      name: "SNEEZING",
-      active: false,
-      tooltip:
-        "Andes primarily attacks the lungs, not the upper respiratory tract. Nasal symptoms are rare and sneezing plays no real role in how it spreads.",
-    },
-    {
-      name: "COUGHING",
-      active: true,
-      tooltip:
-        "As the lungs fill with fluid, patients cough up infected secretions. Close caregivers, family members and medical staff alike, are especially vulnerable.",
-    },
-    {
-      name: "FEVER",
-      active: true,
-      tooltip:
-        "Fever is one of the first signs the body is fighting back. It kicks in early during the prodromal phase and often tips off health workers that something serious is happening.",
-    },
-    {
-      name: "SWEATING",
-      active: true,
-      tooltip:
-        "Heavy sweating comes with the fever and can leave infected fluid on skin and surfaces. In close quarters, that raises the risk of contact transmission.",
-    },
-    {
-      name: "VOMITING",
-      active: true,
-      tooltip:
-        "Gastrointestinal symptoms show up in roughly half of cases. The vomiting itself spreads viral particles and takes a real toll on caregivers managing infected patients.",
-    },
-    {
-      name: "FATIGUE",
-      active: true,
-      tooltip:
-        "Exhaustion hits early and hard, often before anyone suspects hantavirus. Patients feel too worn down to seek care, which extends the window where they're infectious without knowing it.",
-    },
-    {
-      name: "DIARRHEA",
-      active: false,
-      tooltip:
-        "Andes doesn't cause significant gut involvement. Diarrhea hasn't shown up consistently in clinical cases and isn't part of the typical picture.",
-    },
-    {
-      name: "NAUSEA",
-      active: true,
-      tooltip:
-        "Early presentation resembles influenza: nausea, general malaise, mild fever. The nonspecific nature of these symptoms makes early identification difficult.",
-    },
-    {
-      name: "PULMONARY EDEMA",
-      active: true,
-      tooltip:
-        "Fluid flooding the lungs is what kills most Andes patients. It can progress from mild respiratory distress to full respiratory failure within hours.",
-    },
-    {
-      name: "MYALGIA",
-      active: true,
-      tooltip:
-        "Severe muscle aches are one of the most prominent early signs, appearing alongside fever and headache days before the lungs are affected. Patients often describe it as the worst body pain they've felt.",
-    },
-    {
-      name: "HYPERSENSITIVITY",
-      active: false,
-      tooltip:
-        "Andes does dysregulate the immune system, but it doesn't produce the kind of full-blown hypersensitivity or cytokine storm seen in some other hemorrhagic fevers.",
-    },
-    {
-      name: "ATAXIA",
-      active: false,
-      tooltip:
-        "Andes doesn't target the nervous system. Motor problems and coordination issues aren't part of the clinical picture.",
-    },
-    {
-      name: "KIDNEY FAILURE",
-      active: false,
-      tooltip:
-        "Kidney damage is the hallmark of Old World hantaviruses like Hantaan. Andes goes after the lungs instead, renal failure is not commonly observed.",
-    },
-    {
-      name: "DEPRESSION",
-      active: false,
-      tooltip:
-        "Survivors sometimes deal with psychological effects afterward, but acute depression isn't part of how Andes presents during active infection.",
-    },
-    {
-      name: "HEMORRHAGING",
-      active: true,
-      tooltip:
-        "Unlike most hantaviruses, Andes can cause bleeding: petechiae, mucosal hemorrhage, vascular leakage. It's one of the features that makes it particularly dangerous.",
-    },
-    {
-      name: "LIVER FAILURE",
-      active: false,
-      tooltip:
-        "Liver complications are sometimes observed, though a progressing viral infection doesn't often get to the stage of liver failure before other complications.",
-    },
-    {
-      name: "HEART FAILURE",
-      active: true,
-      tooltip:
-        "The leading cause of death in Andes HPS. Capillary leak floods the lungs and starves the heart of oxygen, causing hemodynamic collapse often within a day or two of cardiopulmonary onset.",
-    },
-    {
-      name: "BLINDNESS",
-      active: false,
-      tooltip:
-        "Visual symptoms aren't associated with Andes. The virus doesn't affect the eyes and blindness hasn't appeared in any known case series.",
-    },
-    {
-      name: "HYPOTONIA",
-      active: false,
-      tooltip:
-        "Muscle tone problems aren't part of Andes hantavirus. The virus causes severe illness, but not this kind.",
-    },
-    {
-      name: "ENCEPHALITIS",
-      active: false,
-      tooltip:
-        "Andes doesn't inflame the brain. The damage stays in the lungs and cardiovascular system, which sets it apart from some other viral hemorrhagic fevers.",
-    },
-  ],
-  resistances: [
-    {
-      name: "COLD I",
-      active: true,
-      tooltip:
-        "The long-tailed pygmy rice rat, Andes' primary host, thrives in the cool, humid Andean foothills. The virus has adapted to persist in those same temperate conditions.",
-    },
-    {
-      name: "COLD II",
-      active: false,
-      tooltip:
-        "Below-freezing temperatures break down the viral envelope quickly outside a host. The virus has no meaningful tolerance for sustained cold at that range.",
-    },
-    {
-      name: "HEAT I",
-      active: false,
-      tooltip:
-        "Andes is a cool-climate virus. It breaks down faster in warm conditions and hasn't shown meaningful adaptation to heat.",
-    },
-    {
-      name: "MOISTURE I",
-      active: true,
-      tooltip:
-        "Humid conditions help the virus persist longer in rodent excreta. Infected droppings can stay viable for days in moist, shaded spots.",
-    },
-    {
-      name: "MOISTURE II",
-      active: false,
-      tooltip:
-        "Andes doesn't love wet conditions so much as it tolerates them. The virus hangs around longer in damp environments, but that's more about slowing breakdown than any real affinity for moisture.",
-    },
-    {
-      name: "DRUG I",
-      active: false,
-      tooltip:
-        "There's no approved antiviral for Andes. Ribavirin has been tried but hasn't shown statistically conclusive benefits.",
-    },
-  ],
-  transmissions: [
-    {
-      name: "RODENT",
-      active: true,
-      tooltip:
-        "The long-tailed pygmy rice rat (Oligoryzomys longicaudatus) carries the virus without getting sick. Humans pick it up through contact with the rodent's urine, droppings, or saliva.",
-    },
-    {
-      name: "HUMAN",
-      active: true,
-      tooltip:
-        "Andes is the only hantavirus that has shown significant person-to-person spread. It happens through close contact, especially within households, and it's what makes outbreak containment so difficult.",
-    },
-    {
-      name: "WATERBORNE",
-      active: false,
-      tooltip:
-        "Hantavirus doesn't survive well in open water and breaks down with standard treatment. Waterborne spread isn't a route for Andes.",
-    },
-    {
-      name: "AIRBORNE",
-      active: true,
-      tooltip:
-        "The main way people get infected is by breathing in aerosolized particles from rodent excreta in enclosed spaces. Person-to-person airborne transmission has also been confirmed among close contacts.",
-    },
-  ],
-  traits: [
-    {
-      name: "DURABLE",
-      active: true,
-      tooltip:
-        "Dried rodent droppings can stay infectious for days or even weeks under cool, dry conditions. People can be exposed long after the rodent is gone.",
-    },
-    {
-      name: "VIRUS",
-      active: true,
-      tooltip:
-        "Andes is a negative-sense single-stranded RNA virus in the Hantaviridae family. Its segmented genome makes it prone to mutation and gives it room to evade immune responses.",
-    },
-    {
-      name: "HEMORRHAGIC",
-      active: true,
-      tooltip:
-        "Unlike North American hantaviruses, Andes can produce significant hemorrhagic features. Vascular leakage and coagulopathy cause both internal and mucosal bleeding.",
-    },
-  ],
+    name: "ANDES HANTAVIRUS",
+    type: "VIRUS EVOLUTION",
+    evolutionPoints: 0,
+    avgInfectionsPerDay: totalInfected / daysSinceStart,
+    avgDeathsPerDay: totalDead / daysSinceStart,
+    lethality: 0.45,
+    infectivity: 0.32,
+    visibility: 0.55,
+    symptoms: [
+      {
+        name: "SNEEZING",
+        active: false,
+        tooltip:
+          "Andes primarily attacks the lungs, not the upper respiratory tract. Nasal symptoms are rare and sneezing plays no real role in how it spreads.",
+      },
+      {
+        name: "COUGHING",
+        active: true,
+        tooltip:
+          "As the lungs fill with fluid, patients cough up infected secretions. Close caregivers, family members and medical staff alike, are especially vulnerable.",
+      },
+      {
+        name: "FEVER",
+        active: true,
+        tooltip:
+          "Fever is one of the first signs the body is fighting back. It kicks in early during the prodromal phase and often tips off health workers that something serious is happening.",
+      },
+      {
+        name: "SWEATING",
+        active: true,
+        tooltip:
+          "Heavy sweating comes with the fever and can leave infected fluid on skin and surfaces. In close quarters, that raises the risk of contact transmission.",
+      },
+      {
+        name: "VOMITING",
+        active: true,
+        tooltip:
+          "Gastrointestinal symptoms show up in roughly half of cases. The vomiting itself spreads viral particles and takes a real toll on caregivers managing infected patients.",
+      },
+      {
+        name: "FATIGUE",
+        active: true,
+        tooltip:
+          "Exhaustion hits early and hard, often before anyone suspects hantavirus. Patients feel too worn down to seek care, which extends the window where they're infectious without knowing it.",
+      },
+      {
+        name: "DIARRHEA",
+        active: false,
+        tooltip:
+          "Andes doesn't cause significant gut involvement. Diarrhea hasn't shown up consistently in clinical cases and isn't part of the typical picture.",
+      },
+      {
+        name: "NAUSEA",
+        active: true,
+        tooltip:
+          "Early presentation resembles influenza: nausea, general malaise, mild fever. The nonspecific nature of these symptoms makes early identification difficult.",
+      },
+      {
+        name: "PULMONARY EDEMA",
+        active: true,
+        tooltip:
+          "Fluid flooding the lungs is what kills most Andes patients. It can progress from mild respiratory distress to full respiratory failure within hours.",
+      },
+      {
+        name: "MYALGIA",
+        active: true,
+        tooltip:
+          "Severe muscle aches are one of the most prominent early signs, appearing alongside fever and headache days before the lungs are affected. Patients often describe it as the worst body pain they've felt.",
+      },
+      {
+        name: "HYPERSENSITIVITY",
+        active: false,
+        tooltip:
+          "Andes does dysregulate the immune system, but it doesn't produce the kind of full-blown hypersensitivity or cytokine storm seen in some other hemorrhagic fevers.",
+      },
+      {
+        name: "ATAXIA",
+        active: false,
+        tooltip:
+          "Andes doesn't target the nervous system. Motor problems and coordination issues aren't part of the clinical picture.",
+      },
+      {
+        name: "KIDNEY FAILURE",
+        active: false,
+        tooltip:
+          "Kidney damage is the hallmark of Old World hantaviruses like Hantaan. Andes goes after the lungs instead, renal failure is not commonly observed.",
+      },
+      {
+        name: "DEPRESSION",
+        active: false,
+        tooltip:
+          "Survivors sometimes deal with psychological effects afterward, but acute depression isn't part of how Andes presents during active infection.",
+      },
+      {
+        name: "HEMORRHAGING",
+        active: true,
+        tooltip:
+          "Unlike most hantaviruses, Andes can cause bleeding: petechiae, mucosal hemorrhage, vascular leakage. It's one of the features that makes it particularly dangerous.",
+      },
+      {
+        name: "LIVER FAILURE",
+        active: false,
+        tooltip:
+          "Liver complications are sometimes observed, though a progressing viral infection doesn't often get to the stage of liver failure before other complications.",
+      },
+      {
+        name: "HEART FAILURE",
+        active: true,
+        tooltip:
+          "The leading cause of death in Andes HPS. Capillary leak floods the lungs and starves the heart of oxygen, causing hemodynamic collapse often within a day or two of cardiopulmonary onset.",
+      },
+      {
+        name: "BLINDNESS",
+        active: false,
+        tooltip:
+          "Visual symptoms aren't associated with Andes. The virus doesn't affect the eyes and blindness hasn't appeared in any known case series.",
+      },
+      {
+        name: "HYPOTONIA",
+        active: false,
+        tooltip:
+          "Muscle tone problems aren't part of Andes hantavirus. The virus causes severe illness, but not this kind.",
+      },
+      {
+        name: "ENCEPHALITIS",
+        active: false,
+        tooltip:
+          "Andes doesn't inflame the brain. The damage stays in the lungs and cardiovascular system, which sets it apart from some other viral hemorrhagic fevers.",
+      },
+    ],
+    resistances: [
+      {
+        name: "COLD I",
+        active: true,
+        tooltip:
+          "The long-tailed pygmy rice rat, Andes' primary host, thrives in the cool, humid Andean foothills. The virus has adapted to persist in those same temperate conditions.",
+      },
+      {
+        name: "COLD II",
+        active: false,
+        tooltip:
+          "Below-freezing temperatures break down the viral envelope quickly outside a host. The virus has no meaningful tolerance for sustained cold at that range.",
+      },
+      {
+        name: "HEAT I",
+        active: false,
+        tooltip:
+          "Andes is a cool-climate virus. It breaks down faster in warm conditions and hasn't shown meaningful adaptation to heat.",
+      },
+      {
+        name: "MOISTURE I",
+        active: true,
+        tooltip:
+          "Humid conditions help the virus persist longer in rodent excreta. Infected droppings can stay viable for days in moist, shaded spots.",
+      },
+      {
+        name: "MOISTURE II",
+        active: false,
+        tooltip:
+          "Andes doesn't love wet conditions so much as it tolerates them. The virus hangs around longer in damp environments, but that's more about slowing breakdown than any real affinity for moisture.",
+      },
+      {
+        name: "DRUG I",
+        active: false,
+        tooltip:
+          "There's no approved antiviral for Andes. Ribavirin has been tried but hasn't shown statistically conclusive benefits.",
+      },
+    ],
+    transmissions: [
+      {
+        name: "RODENT",
+        active: true,
+        tooltip:
+          "The long-tailed pygmy rice rat (Oligoryzomys longicaudatus) carries the virus without getting sick. Humans pick it up through contact with the rodent's urine, droppings, or saliva.",
+      },
+      {
+        name: "HUMAN",
+        active: true,
+        tooltip:
+          "Andes is the only hantavirus that has shown significant person-to-person spread. It happens through close contact, especially within households, and it's what makes outbreak containment so difficult.",
+      },
+      {
+        name: "WATERBORNE",
+        active: false,
+        tooltip:
+          "Hantavirus doesn't survive well in open water and breaks down with standard treatment. Waterborne spread isn't a route for Andes.",
+      },
+      {
+        name: "AIRBORNE",
+        active: true,
+        tooltip:
+          "The main way people get infected is by breathing in aerosolized particles from rodent excreta in enclosed spaces. Person-to-person airborne transmission has also been confirmed among close contacts.",
+      },
+    ],
+    traits: [
+      {
+        name: "DURABLE",
+        active: true,
+        tooltip:
+          "Dried rodent droppings can stay infectious for days or even weeks under cool, dry conditions. People can be exposed long after the rodent is gone.",
+      },
+      {
+        name: "VIRUS",
+        active: true,
+        tooltip:
+          "Andes is a negative-sense single-stranded RNA virus in the Hantaviridae family. Its segmented genome makes it prone to mutation and gives it room to evade immune responses.",
+      },
+      {
+        name: "HEMORRHAGIC",
+        active: true,
+        tooltip:
+          "Unlike North American hantaviruses, Andes can produce significant hemorrhagic features. Vascular leakage and coagulopathy cause both internal and mucosal bleeding.",
+      },
+    ],
   };
 });
 
@@ -683,6 +683,7 @@ function onPanTo({ x, y }: { x: number; y: number }) {
             width="2886.65"
             height="1445.15"
             style="pointer-events: none"
+            fetchpriority="high"
           />
           <ShipOverlay />
           <PlaneOverlay
@@ -847,12 +848,20 @@ function onPanTo({ x, y }: { x: number; y: number }) {
         <p class="text-base sm:text-sm leading-relaxed text-white/50">
           A real-time outbreak tracker styled after the classic flash game
           <span class="inline-flex items-center align-middle">
-            <img
+            <NuxtImg
               src="/pandemic.png"
               alt="Pandemic"
+              height="44"
+              format="webp"
               class="-mr-[3px] h-[22px] w-auto"
             />
-            <img src="/two.png" alt="2" class="h-[22px] w-auto" />
+            <NuxtImg
+              src="/two.png"
+              alt="2"
+              height="44"
+              format="webp"
+              class="h-[22px] w-auto"
+            />
           </span>
           that inspired many other popular games like Plague Inc.
         </p>
