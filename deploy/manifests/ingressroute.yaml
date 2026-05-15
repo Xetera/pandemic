@@ -16,4 +16,4 @@ spec:
   tls:
     options:
       name: ingress-cloudflare-mtls@kubernetescrd
-    secretName: cloudflare-origin-xetera.dev
+    secretName: cloudflare-origin-xetera-dev
